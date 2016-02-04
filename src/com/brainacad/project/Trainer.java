@@ -6,17 +6,12 @@ import java.util.Map;
 /**
  * Created by user on 10.01.2016.
  */
-public class Trainer {
-    private String trainerName;
-    private String trainerSurname;
-    private Integer trainerId;
+public class Trainer extends Person{
     private static Integer numberOfTrainers = 0;
     private static Map<Integer,Trainer> trainerMap = new HashMap<>();
 
-    public Trainer(String trainerName, String trainerSurname) {
-        this.trainerName = trainerName;
-        this.trainerSurname = trainerSurname;
-        this.trainerId = numberOfTrainers;
+    public Trainer(String trainerFirstName, String trainerLastName) {
+        super(trainerFirstName,trainerLastName);
     }
 
     public static void addTrainer(String name, String surname){
@@ -26,14 +21,10 @@ public class Trainer {
 
     @Override
     public String toString() {
-        return new StringBuilder().append(trainerName).append(" ").append(trainerSurname).toString();
+        return new StringBuilder().append(this.getFirstName()).append(" ").append(this.getLastName()).toString();
     }
 
-    public static void printTrainers (){
-        System.out.println(trainerMap);
-    }
-
-    public static String getTrainer(Integer key){
-        return new StringBuilder().append(trainerMap.get(key)).toString();
+    public static Trainer getTrainer(Integer key){
+        return trainerMap.get(key);
     }
 }
