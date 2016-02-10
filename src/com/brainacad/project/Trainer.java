@@ -10,13 +10,14 @@ public class Trainer extends Person{
     private static Integer numberOfTrainers = 0;
     private static Map<Integer,Trainer> trainerMap = new HashMap<>();
 
-    public Trainer(String trainerFirstName, String trainerLastName) {
+    private Trainer(String trainerFirstName, String trainerLastName) {
         super(trainerFirstName,trainerLastName);
+        this.setId(numberOfTrainers);
+        numberOfTrainers++;
     }
 
     public static void addTrainer(String name, String surname){
         trainerMap.put(numberOfTrainers,new Trainer(name,surname));
-        numberOfTrainers++;
     }
 
     @Override

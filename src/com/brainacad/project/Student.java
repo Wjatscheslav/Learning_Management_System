@@ -11,13 +11,20 @@ public class Student extends Person {
     private Map<Task,Integer> notes = new HashMap<>();
     private int[] courseIdArray = new int[10];
 
-    private Student(String name, String surname){
+    public Student(String name, String surname){
         super(name,surname);
+        this.setId(numberOfStudents);
+        studentMap.put(numberOfStudents,this);
+        numberOfStudents++;
     }
 
-    public static void addStudent(String name, String surname){
-        studentMap.put(numberOfStudents,new Student(name,surname));
-        numberOfStudents++;
+    public static void createStudent(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("First name:");
+        String name = sc.nextLine();
+        System.out.println("Last name:");
+        String surname = sc.nextLine();
+        Student student = new Student(name,surname);
     }
 
     @Override
@@ -25,9 +32,9 @@ public class Student extends Person {
         return new StringBuilder().append(this.getFirstName()).append(" ").append(this.getLastName()).toString();
     }
 
-
     public static Student getStudent(Integer key){
         return studentMap.get(key);
     }
+
 
 }
