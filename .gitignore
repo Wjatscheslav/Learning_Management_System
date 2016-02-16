@@ -2,13 +2,10 @@
 *.iml
 .idea/workspace.xml
 .idea/compiler.xml
-.idea/compiler.xml
-target/test-classes/Test.class
 .idea/copyright/profiles_settings.xml
 .idea/encodings.xml
 .idea/modules.xml
 .idea/misc.xml
 .idea/vcs.xml
-*.class
 .idea/uiDesigner.xml
 target/
