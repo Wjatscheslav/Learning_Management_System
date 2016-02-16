@@ -1,11 +1,8 @@
 package com.brainacad.view;
 
-import com.brainacad.fileoperations.FileManager;
-import com.brainacad.manager.CourseManager;
-import com.brainacad.manager.StudentManager;
-import com.brainacad.model.Course;
-import com.brainacad.model.Student;
-import com.brainacad.model.Trainer;
+import com.brainacad.project.Course;
+import com.brainacad.project.Student;
+import com.brainacad.project.Trainer;
 
 import java.util.*;
 
@@ -14,19 +11,21 @@ import java.util.*;
  */
 public class Main {
     public static void main(String[] args){
- //       Scanner sc = new Scanner(System.in);
-
-
-        FileManager.readFromFile();
-        System.out.println("Courses count " + CourseManager.getCourseMap().size());
-        System.out.println("Students count " + StudentManager.getStudentMap().size());
-        System.out.println(CourseManager.getCourse(1));
-        System.out.println(StudentManager.getStudent(1));
-        CourseManager.printAllCourses();
-
-//        CourseManager.createCourse();
-//        StudentManager.createStudent();
-//        FileManager.writeToFile();
-
+//        Student.addStudent("Viacheslav","Tarasenko");
+//        Student.addStudent("Vladimir","Fastovez");
+//        Student.addStudent("Konstantin","Kalinovskiy");
+//        Student.addStudent("Andrey","Denisov");
+//        Student.addStudent("Viacheslav","Evlahov");
+//        Student.addStudent("Oleksii","Karpenko");
+        Student student1 = new Student("Viacheslav","Tarasenko");
+        System.out.println(Student.getStudent(0));
+        Student.createStudent();
+        System.out.println(Student.getStudent(1));
+        Trainer.addTrainer("Alexander","Semeniuk");
+        Set<Course.DaysOfWeek> days = new HashSet<>();
+        days.add(Course.DaysOfWeek.Mon);
+//        Course.createCourse();
+//        Course.createCourse();
+//        Course.printAllCourses();
     }
 }
