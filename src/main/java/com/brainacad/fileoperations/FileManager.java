@@ -42,7 +42,7 @@ public class FileManager{
                 if (o instanceof Student) {
                     StudentManager.addStudent((Student) o);
                 } else if (o instanceof Course) {
-                    CourseManager.setCourse((Course) o);
+                    CourseManager.addCourse((Course) o);
                 } else if (o instanceof Trainer) {
 //                    TrainerManager.setTrainer((Trainer)o);
                 }

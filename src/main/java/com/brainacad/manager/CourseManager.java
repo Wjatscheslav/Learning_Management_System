@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class CourseManager {
 
     private static Map<Integer,Course> courseMap = new HashMap<>();
-    private static int numberOfCourses = 0;
+//    private static int numberOfCourses = 0;
     private static Pattern datePattern = Pattern.compile("^(((0?[1-9])|([1,2][0-9])|(3[0,1]))[\\.,-]((0?[1,3,5,7,8])|(1[0,2]))[\\.,-](20[0-9][0-9]))|" + //for month's with 31 day
             "(((0?[1-9])|([1,2][0-9])|(30))[\\.,-]((0?[4,6,9])|(11))[\\.,-](20[0-9][0-9]))|" + //for month's with 30 days
             "(((0?[1-9])|(1[0-9])|(2[0-8]))[\\.,-](0?2)[\\.,-](20[0-9][0-9]))|" + //for February (not leap year)
@@ -22,9 +22,7 @@ public class CourseManager {
         Calendar dateChecker = new GregorianCalendar();
         Set<Course.DaysOfWeek> days = new HashSet<>();
         Course course = new Course();
-        numberOfCourses++;
-
-        course.setCourseId(numberOfCourses);
+        course.setCourseId(courseMap.size() + 1);
         System.out.println("Course name:");
         course.setCourseName(sc.nextLine());
         System.out.println("Course description:");
@@ -52,7 +50,7 @@ public class CourseManager {
         course.setCourseDaysSet(days);
         System.out.println("New course has been successfully created!\n");
         System.out.println(course.toString());
-        courseMap.put(numberOfCourses,course);
+        courseMap.put(courseMap.size() + 1,course);
     }
 
 
@@ -84,9 +82,8 @@ public class CourseManager {
         }
     }
 
-    public static void setCourse(Course course){
-        numberOfCourses++;
-        courseMap.put(numberOfCourses,course);
+    public static void addCourse(Course course){
+        courseMap.put(courseMap.size() + 1,course);
     }
 
     public static Course getCourse(int id){
