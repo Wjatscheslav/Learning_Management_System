@@ -1,9 +1,0 @@
-com\brainacad\model\Student.class
-com\brainacad\fileoperations\FileManager.class
-com\brainacad\model\Task.class
-com\brainacad\manager\CourseManager.class
-com\brainacad\view\Main.class
-com\brainacad\manager\StudentManager.class
-com\brainacad\model\Trainer.class
-com\brainacad\model\Course.class
-com\brainacad\model\Course$DaysOfWeek.class
