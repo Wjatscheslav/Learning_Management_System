@@ -6,3 +6,11 @@
 =======
 .idea/compiler.xml
 >>>>>>> origin/master
+target/test-classes/Test.class
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/vcs.xml
+*.class
+.idea/uiDesigner.xml
