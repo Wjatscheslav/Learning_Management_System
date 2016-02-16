@@ -14,4 +14,4 @@ target/test-classes/Test.class
 .idea/vcs.xml
 *.class
 .idea/uiDesigner.xml
-target
+target/
