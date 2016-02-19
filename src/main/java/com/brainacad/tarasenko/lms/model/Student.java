@@ -1,4 +1,4 @@
-package com.brainacad.model;
+package com.brainacad.tarasenko.lms.model;
 
 import java.io.Serializable;
 import java.util.*;
@@ -8,19 +8,16 @@ import java.util.*;
  */
 public class Student implements Serializable{
     private final static long serialVersionUID = 2L;
-    private int id;
+    private long id;
     private String firstName;
     private String lastName;
     private int age;
-    private Map<Task,Integer> notes = new HashMap<>();
-    private Set<Integer> courseIdSet = new HashSet<>();
+    private Map<Task,Integer> notes = new TreeMap<>();
+    private Set<Integer> courseIdSet = new TreeSet<>();
 
     @Override
     public String toString() {
-        return new StringBuilder().append("\nStudent ID: ").append(id).
-                append("\nName: ").append(firstName).append(" ").append(lastName).
-                append("\nAge: ").append(age).
-                append("\nCourse(s): ").append(courseIdSet).toString();
+        return String.format("\nStudent ID: %d\nName: %s %s\nAge: %d\nCourse(s): %s", id, firstName, lastName, age, courseIdSet);
     }
 
     @Override
@@ -63,7 +60,7 @@ public class Student implements Serializable{
         this.notes = notes;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
